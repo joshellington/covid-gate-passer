@@ -11,6 +11,7 @@ async function fetch(url, cb) {
   });
 
   const page = await browser.newPage();
+  await page.setRequestInterception(true);
   await page.goto(url);
   await page.waitFor(2000);
   await page.waitForSelector('body');
