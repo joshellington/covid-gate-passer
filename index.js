@@ -12,7 +12,7 @@ async function fetch(url, cb) {
 
   const page = await browser.newPage();
   await page.goto(url);
-  await page.waitFor(2000);
+  await page.waitFor(5000);
   await page.waitForSelector('body');
 
   let pageContent = await page.content();
