@@ -25,6 +25,10 @@ async function fetch(url, cb) {
 app.get('/', (req, res) => {
   let url = req.query.url;
 
+  if (!url) {
+    return res.send('missing url');
+  }
+
   fetch(url, function(pageContent) {
     return res.send(pageContent);
   });
